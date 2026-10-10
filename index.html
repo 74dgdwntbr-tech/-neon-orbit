@@ -1,37 +1,363 @@
+
+
 <!doctype html>
+
 <html lang="uz">
+
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080817">
+
+<meta name="theme-color" content="#090712">
+
 <title>MindTest — Sevgi va munosabatlar</title>
+
 <style>
-:root{color-scheme:dark;--bg:#080817;--panel:#121329;--line:#303052;--text:#f6f4ff;--muted:#b6b3d4;--pink:#ff4da6;--cyan:#5ee7ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#321347 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{max-width:1050px;margin:auto;padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292743}.logo{font-size:1.3rem;font-weight:850;letter-spacing:.3px}.logo b{color:var(--pink)}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:.85rem}main{max-width:1050px;margin:auto;padding:25px 18px 50px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:24px 0 32px}.eyebrow{display:inline-block;color:#ffc1df;background:#29152c;border:1px solid #69305a;border-radius:99px;padding:5px 10px;font-size:.86rem}h1{font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.08;margin:15px 0}h1 span{background:linear-gradient(90deg,#ff73bc,#8d8aff,#5ee7ff);background-clip:text;color:transparent}p{color:var(--muted)}.art{height:245px;border:1px solid #55365f;border-radius:25px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#4b1c58,#181332 52%,#0b0b1c)}.heart{font-size:6rem;filter:drop-shadow(0 0 22px #ff4da6);animation:pulse 2s ease-in-out infinite}.ring{position:absolute;width:230px;height:90px;border:1px solid #ff7bc477;border-radius:50%;transform:rotate(-28deg)}.ring.two{transform:rotate(35deg);border-color:#7beaff88}@keyframes pulse{50%{transform:scale(1.08)}}.btn{border:0;border-radius:13px;background:linear-gradient(100deg,#d52d91,#784fff);color:white;padding:13px 17px;font-weight:750;font-size:1rem;cursor:pointer;display:inline-block;text-decoration:none}.btn.secondary{background:#20203a;border:1px solid var(--line);box-shadow:none}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 30px}.tile,.panel,.testcard{background:linear-gradient(145deg,#15152d,#101020);border:1px solid var(--line);border-radius:18px;padding:17px}.tile strong{display:block}.tile .emoji{font-size:1.45rem}.muted{color:var(--muted);font-size:.9rem}h2{margin:25px 0 12px}.testcard{max-width:680px}.question-meta{font-size:.88rem;color:var(--muted)}.progress{height:6px;background:#2a2945;border-radius:8px;margin:12px 0 20px;overflow:hidden}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--cyan));transition:width .2s}.answers{display:grid;gap:9px}.answer{width:100%;text-align:left;border:1px solid #383657;border-radius:12px;padding:12px;background:#17172f;color:var(--text);font-size:1rem;cursor:pointer}.answer.selected{border-color:var(--pink);background:#32172f}.hidden{display:none!important}.price{font-size:2rem;font-weight:850}.notice{border:1px solid #68532c;background:#292012;color:#ffe0a1;padding:12px;border-radius:12px;font-size:.9rem}.footer{border-top:1px solid #292743;margin-top:38px;padding-top:20px;color:var(--muted);font-size:.85rem}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:12px}.art{height:180px}.grid{grid-template-columns:1fr}.heart{font-size:4.8rem}}
+
+:root{color-scheme:dark;--bg:#090712;--panel:#151123;--pink:#ff58bd;--purple:#a879ff;--muted:#b8b0c9}
+
+*{box-sizing:border-box}
+
+body{margin:0;background:radial-gradient(ellipse at top,#281442 0,#090712 55%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+
+header{max-width:850px;margin:auto;padding:25px 20px;display:flex;justify-content:space-between;align-items:center}
+
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px}.logo b{color:var(--pink)}
+
+.pill{font-size:12px;color:#e4d6ff;border:1px solid #493265;border-radius:30px;padding:9px 12px}
+
+main{max-width:850px;margin:auto;padding:12px 20px 60px}
+
+.hero{text-align:center;padding:28px 8px 34px}
+
+.orbit{width:105px;height:105px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;font-size:48px;background:radial-gradient(circle,#462263,#171025 65%);border:1px solid #8653a9;box-shadow:0 0 35px #a84aff40;animation:float 3s ease-in-out infinite}
+
+@keyframes float{50%{transform:translateY(-7px)}}
+
+.eyebrow{color:var(--pink);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+
+h1{font-size:clamp(30px,7vw,48px);line-height:1.12;letter-spacing:-1.5px;margin:15px 0}
+
+.hero p{color:var(--muted);line-height:1.65;max-width:520px;margin:0 auto}
+
+.card{background:linear-gradient(145deg,#1b1429,#100d1b);border:1px solid #39264d;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 14px 40px #0003}
+
+h2{font-size:21px;margin:0 0 12px}
+
+.muted{color:var(--muted);font-size:14px;line-height:1.6}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
+
+.feature{padding:14px 7px;text-align:center;background:#ffffff08;border:1px solid #ffffff12;border-radius:15px;font-size:12px;color:#ddd3ee}
+
+.feature span{display:block;font-size:23px;margin-bottom:7px}
+
+button{font:inherit;cursor:pointer}
+
+.primary{width:100%;border:0;border-radius:15px;padding:16px;background:linear-gradient(100deg,#a45cff,#f34fbc);color:#fff;font-weight:800;font-size:16px;box-shadow:0 8px 25px #b14fff35}
+
+.secondary{border:1px solid #49345d;background:#21182e;color:#fff;border-radius:13px;padding:13px 16px;width:100%;margin-top:10px}
+
+.progressline{height:6px;background:#30253e;border-radius:9px;overflow:hidden;margin:15px 0 22px}
+
+.progress{height:100%;width:25%;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .25s}
+
+.question{font-size:21px;line-height:1.4;font-weight:750;margin:18px 0}
+
+.option{display:block;width:100%;text-align:left;color:#eee5f8;background:#ffffff06;border:1px solid #40304f;padding:15px;border-radius:14px;margin:10px 0;line-height:1.45}
+
+.option.selected{border-color:var(--pink);background:#ff58bd18;box-shadow:0 0 0 1px #ff58bd30}
+
+.option:focus-visible,button:focus-visible{outline:2px solid white;outline-offset:3px}
+
+.hidden{display:none!important}
+
+.score{font-size:54px;font-weight:850;letter-spacing:-2px;background:linear-gradient(90deg,#ff79cb,#b89aff);background-clip:text;-webkit-background-clip:text;color:transparent;margin:5px 0}
+
+.resultlabel{display:inline-block;padding:8px 12px;border-radius:20px;background:#a879ff20;color:#d6bdff;font-size:13px}
+
+.locked{border-color:#70457d;background:linear-gradient(145deg,#24142f,#141020)}
+
+.price{font-size:28px;font-weight:850;margin:12px 0}
+
+ul{padding-left:20px;color:#e5dcef;line-height:1.8}
+
+footer{text-align:center;color:#81778f;font-size:12px;padding:30px 10px}
+
+@media(max-width:500px){header{padding:20px 16px}main{padding:8px 15px 40px}.card{padding:18px;border-radius:20px}.features{gap:7px}.feature{font-size:11px;padding:12px 4px}.hero{padding-top:20px}}
+
 </style>
+
 </head>
+
 <body>
-<header><div class="logo">♡ Mind<b>Test</b></div><div class="chip">O‘zbekcha · Bepul boshlash</div></header>
+
+<header>
+
+  <div class="logo">♡ Mind<b>Test</b></div>
+
+  <div class="pill">O‘ZBEKCHA · ONLINE</div>
+
+</header>
+
 <main>
-<section class="hero"><div><span class="eyebrow">♡ Sevgi va munosabatlar</span><h1>Bir-biringizni <span>qanchalik</span> tushunasiz?</h1><p>Qiziqarli vaziyatlarga javob ber. Oxirida munosabatlardagi muloqot uslubing haqida qisqa natija ol.</p><a class="btn" href="#test">Testni boshlash →</a></div><div class="art"><div class="ring"></div><div class="ring two"></div><div class="heart">♡</div></div></section>
-<section class="grid"><div class="tile"><div class="emoji">💬</div><strong>Muloqot</strong><span class="muted">Tinglash va fikr bildirish</span></div><div class="tile"><div class="emoji">🫶</div><strong>O‘zaro hurmat</strong><span class="muted">Chegaralar va ishonch</span></div><div class="tile"><div class="emoji">✨</div><strong>Shaxsiy natija</strong><span class="muted">Ko‘ngilochar tahlil</span></div></section>
-<h2 id="test">4 savolli mini-test</h2>
-<section class="testcard" id="quizCard"><div class="question-meta" id="meta">1 / 4-savol</div><div class="progress"><div id="bar"></div></div><h2 id="question" style="margin-top:0">Yaqin insoningiz sizdan xafa bo‘lsa, avval nima qilasiz?</h2><div class="answers" id="answers"></div><button class="btn" id="next" style="margin-top:16px" onclick="nextQuestion()">Keyingi savol →</button>
-<div id="result" class="hidden"><h2>♡ Dastlabki natijangiz</h2><p id="summary"></p><p class="muted">Bu test ko‘ngilochar maqsadda tuzilgan; u ilmiy tashxis yoki munosabatlaringiz kelajagi haqida kafolat bermaydi.</p><div class="panel"><span class="eyebrow">To‘liq natija</span><div class="price">8 000 so‘m</div><p>To‘liq natija: javoblaringiz bo‘yicha batafsil izohlar, muloqot uchun tavsiyalar va o‘ylab ko‘rish savollari.</p><div class="notice">Hozircha haqiqiy to‘lov ulanmagan. Bu tugma namuna, pul yechilmaydi. To‘lov tizimi xavfsiz tarzda ulangandan keyingina natija pullik ochiladi.</div><button class="btn secondary" style="margin-top:14px;width:100%" onclick="alert('To‘lov hali ulanmagan. Hozircha foydalanuvchidan pul so‘ramang va karta ma’lumotlarini kiritmang.')">To‘liq natijani ochish — 8 000 so‘m</button></div></div></section>
-<footer class="footer">© 2026 MindTest · Testlar o‘zini anglash va suhbat uchun. Natijalar psixologik tashxis emas.</footer>
+
+<section class="hero" id="welcome">
+
+  <div class="orbit">♡</div>
+
+  <div class="eyebrow">O‘zingizni yaxshiroq anglang</div>
+
+  <h1>Bir-biringizni<br>qanchalik tushunasiz?</h1>
+
+  <p>4 ta savolga javob bering va munosabatlaringizdagi muloqot, mehr va ishonch haqida qisqa tahlil oling.</p>
+
+  <div class="features">
+
+    <div class="feature"><span>💗</span>Mehr va e’tibor</div>
+
+    <div class="feature"><span>💬</span>Muloqot</div>
+
+    <div class="feature"><span>🤝</span>Ishonch</div>
+
+  </div>
+
+  <button class="primary" id="start">Testni boshlash →</button>
+
+  <p class="muted" style="margin-top:14px;font-size:12px">Bepul mini-test · Taxminan 2 daqiqa</p>
+
+</section>
+
+<section class="card hidden" id="quiz">
+
+  <div class="muted" id="step">1 / 4-savol</div>
+
+  <div class="progressline"><div class="progress" id="bar"></div></div>
+
+  <div class="question" id="question"></div>
+
+  <div id="options"></div>
+
+  <button class="primary" id="next" disabled>Keyingi savol →</button>
+
+  <button class="secondary" id="back">Orqaga</button>
+
+</section>
+
+<section class="hidden" id="result">
+
+  <div class="card">
+
+    <div class="eyebrow">Sizning natijangiz</div>
+
+    <h2 id="resultTitle">Munosabatlar tahlili</h2>
+
+    <div class="score" id="score">75%</div>
+
+    <div class="resultlabel" id="label">Yaxshi boshlanish</div>
+
+    <p id="summary" style="line-height:1.7"></p>
+
+    <h2 style="margin-top:25px">Sizning kuchli tomoningiz</h2>
+
+    <p id="strength" class="muted"></p>
+
+    <h2 style="margin-top:22px">Kichik tavsiya</h2>
+
+    <p id="tip" class="muted"></p>
+
+  </div>
+
+  <div class="card locked">
+
+    <div class="eyebrow">Premium tahlil</div>
+
+    <h2>💎 To‘liq natijani oching</h2>
+
+    <p class="muted">Batafsil hisobotda javoblaringiz asosida quyidagilar bilan tanishing:</p>
+
+    <ul>
+
+      <li>Muloqot va ishonch bo‘yicha batafsil izoh</li>
+
+      <li>Munosabatlarni mustahkamlash uchun tavsiyalar</li>
+
+      <li>Bir-biringizni yaxshiroq tushunish uchun savollar</li>
+
+    </ul>
+
+    <div class="price">8 000 so‘m</div>
+
+    <button class="primary" id="pay">To‘liq natijani ochish →</button>
+
+    <p class="muted" style="font-size:12px;margin-top:12px">Demo: haqiqiy to‘lov hali ulanmagan.</p>
+
+  </div>
+
+  <button class="secondary" id="restart">Testni qayta boshlash</button>
+
+</section>
+
 </main>
+
+<footer>© 2026 MindTest · O‘zaro hurmat va ochiq muloqot muhim.</footer>
+
 <script>
-const qs=[
-{q:"Yaqin insoningiz sizdan xafa bo‘lsa, avval nima qilasiz?",a:["Tinch paytda gaplashishni taklif qilaman","Nima bo‘lganini tushunish uchun tinglayman","Biroz vaqt beraman","O‘zimni qanday his qilayotganimni tushuntiraman"],type:["talk","listen","space","share"]},
-{q:"Kelishmovchilik paytida siz uchun eng muhimi nima?",a:["Bir-birimizni tushunish","Muammoni aniq hal qilish","Tinchlanib, keyin davom etish","Ikkalamizning fikrimiz ham eshitilishi"],type:["listen","solve","space","share"]},
-{q:"Yaqin insoningizga mehrni ko‘proq qanday ko‘rsatasiz?",a:["Yaxshi so‘zlar bilan","Amaliy yordam bilan","Birga vaqt o‘tkazib","Kichik e’tibor va sovg‘alar bilan"],type:["words","help","time","care"]},
-{q:"Sog‘lom munosabatda qaysi narsa eng muhim deb o‘ylaysiz?",a:["Ishonch va halollik","Ochiq muloqot","Shaxsiy chegaralarni hurmat qilish","Bir-birini qo‘llab-quvvatlash"],type:["trust","talk","space","care"]}
+
+const questions=[
+
+ {q:"Yaqin insoningiz sizdan xafa bo‘lsa, odatda nima qilasiz?",a:[
+
+  ["Tinch gaplashib, sababini tushunishga harakat qilaman",3],
+
+  ["Biroz vaqt beraman, keyin gaplashaman",2],
+
+  ["Muammoni gapirmasdan o‘tib ketishini kutaman",1]]},
+
+ {q:"Kelishmovchilik paytida siz uchun nima muhim?",a:[
+
+  ["Bir-birimizni tinglash va yechim topish",3],
+
+  ["Tinchlanib, keyin suhbatni davom ettirish",2],
+
+  ["Bahsni imkon qadar tez tugatish",1]]},
+
+ {q:"Yaqin insoningizga mehringizni qanday ko‘rsatasiz?",a:[
+
+  ["So‘zlarim va amallarim bilan muntazam",3],
+
+  ["Ko‘proq yordam berish orqali",2],
+
+  ["Ko‘pincha u o‘zi tushunadi deb o‘ylayman",1]]},
+
+ {q:"Sog‘lom munosabatda qaysi narsa eng muhim?",a:[
+
+  ["Ishonch, hurmat va ochiq muloqot",3],
+
+  ["Bir-birini qo‘llab-quvvatlash",2],
+
+  ["Har doim bir fikrda bo‘lish",1]]}
+
 ];
-let i=0,chosen=null,counts={};
-function render(){chosen=null;document.getElementById('meta').textContent=(i+1)+' / '+qs.length+'-savol';document.getElementById('bar').style.width=(i/qs.length*100)+'%';document.getElementById('question').textContent=qs[i].q;let box=document.getElementById('answers');box.innerHTML='';qs[i].a.forEach((txt,n)=>{let b=document.createElement('button');b.className='answer';b.textContent=txt;b.onclick=()=>{chosen=n;document.querySelectorAll('.answer').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};box.appendChild(b)});}
-function nextQuestion(){if(chosen===null){alert('Davom etish uchun javobni tanlang.');return}let type=qs[i].type[chosen];counts[type]=(counts[type]||0)+1;i++;if(i<qs.length){render()}else{document.getElementById('meta').textContent='Test yakunlandi';document.getElementById('bar').style.width='100%';document.getElementById('question').classList.add('hidden');document.getElementById('answers').classList.add('hidden');document.getElementById('next').classList.add('hidden');let keys=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);let texts={talk:'Siz uchun ochiq muloqot muhim ko‘rinadi. Fikr va hislarni hurmat bilan aytish foydali bo‘lishi mumkin.',listen:'Javoblaringiz tinglash va tushunishga e’tibor berishingiz mumkinligini ko‘rsatadi.',space:'Sizga vaziyatni tinch o‘ylab olish uchun vaqt kerak bo‘lishi mumkin. Buni yaqin insoningizga muloyim aytish yordam beradi.',share:'Hislaringizni ochiq aytish va o‘zaro tushunish siz uchun muhim bo‘lishi mumkin.',words:'Mehrni so‘z bilan bildirish sizga yaqin bo‘lishi mumkin.',help:'Amaliy yordam orqali e’tibor ko‘rsatish sizga mos kelishi mumkin.',time:'Birga vaqt o‘tkazish siz uchun qadrlidir.',care:'Kichik e’tiborlar siz uchun ma’noli bo‘lishi mumkin.',solve:'Muammoni birgalikda hal qilishni qadrlashingiz mumkin.',trust:'Ishonch va halollikni muhim deb bilishingiz mumkin.'};document.getElementById('summary').textContent=texts[keys[0]]||'Javoblaringiz munosabatlar haqida o‘ylab ko‘rish uchun boshlang‘ich nuqta bo‘lishi mumkin.';document.getElementById('result').classList.remove('hidden')}}
-render();
+
+let index=0,answers=[];
+
+const $=id=>document.getElementById(id);
+
+$("start").addEventListener("click",()=>{index=0;answers=[];$("welcome").classList.add("hidden");$("result").classList.add("hidden");$("quiz").classList.remove("hidden");render()});
+
+function render(){
+
+ const item=questions[index];
+
+ $("step").textContent=(index+1)+" / "+questions.length+"-savol";
+
+ $("bar").style.width=((index+1)/questions.length*100)+"%";
+
+ $("question").textContent=item.q;
+
+ $("options").innerHTML="";
+
+ item.a.forEach((option,n)=>{
+
+  const button=document.createElement("button");
+
+  button.className="option"+(answers[index]===n?" selected":"");
+
+  button.textContent=option[0];
+
+  button.addEventListener("click",()=>{
+
+   answers[index]=n;
+
+   document.querySelectorAll(".option").forEach(b=>b.classList.remove("selected"));
+
+   button.classList.add("selected");$("next").disabled=false;
+
+  });
+
+  $("options").appendChild(button);
+
+ });
+
+ $("next").disabled=answers[index]===undefined;
+
+ $("next").textContent=index===questions.length-1?"Natijani ko‘rish →":"Keyingi savol →";
+
+ $("back").style.visibility=index===0?"hidden":"visible";
+
+}
+
+$("next").addEventListener("click",()=>{
+
+ if(answers[index]===undefined)return;
+
+ if(index<questions.length-1){index++;render()}else showResult();
+
+});
+
+$("back").addEventListener("click",()=>{if(index>0){index--;render()}});
+
+function showResult(){
+
+ const total=answers.reduce((sum,answer,i)=>sum+questions[i].a[answer][1],0);
+
+ const percent=Math.round(total/(questions.length*3)*100);
+
+ $("quiz").classList.add("hidden");$("result").classList.remove("hidden");
+
+ $("score").textContent=percent+"%";
+
+ if(percent>=85){
+
+  $("resultTitle").textContent="Ochiq muloqotga intilasiz";
+
+  $("label").textContent="Kuchli asos";
+
+  $("summary").textContent="Javoblaringiz o‘zaro hurmat, tinglash va ochiq muloqot siz uchun muhimligini ko‘rsatadi. Bu munosabatlar uchun yaxshi asos bo‘lishi mumkin.";
+
+  $("strength").textContent="Suhbatlashish va kelishmovchiliklarni tushunishga intilish.";
+
+  $("tip").textContent="Bir-biringizni tinglashni davom ettiring va his-tuyg‘ularingizni ochiq ifoda eting.";
+
+ }else if(percent>=60){
+
+  $("resultTitle").textContent="Yaxshi rivojlanish imkoniyati";
+
+  $("label").textContent="Muvozanat sari";
+
+  $("summary").textContent="Javoblaringizda ijobiy odatlar ham, rivojlantirish mumkin bo‘lgan jihatlar ham bor. Kichik va muntazam suhbatlar foyda berishi mumkin.";
+
+  $("strength").textContent="Munosabatlar haqida o‘ylashga va yaxshilashga tayyorlik.";
+
+  $("tip").textContent="Haftada bir marta bir-biringizdan nimalar quvontirgani va nimani yaxshilash mumkinligini so‘rang.";
+
+ }else{
+
+  $("resultTitle").textContent="Bir-biringizni tinglashdan boshlang";
+
+  $("label").textContent="Yangi qadamlar";
+
+  $("summary").textContent="Bu qisqa test ayrim odatlarni qayta ko‘rib chiqish uchun imkoniyat beradi. Natija munosabatlaringizni to‘liq belgilamaydi.";
+
+  $("strength").textContent="O‘zaro tushunishni yaxshilash uchun har doim yangi qadam tashlash mumkin.";
+
+  $("tip").textContent="Shoshilmasdan suhbatlashing, savollar bering va bir-biringizning fikrini bo‘lmasdan tinglang.";
+
+ }
+
+ window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+$("pay").addEventListener("click",()=>alert("Demo rejim: haqiqiy to‘lov hali ulanmagan. To‘lov tasdiqlanmaguncha pul yubormang."));
+
+$("restart").addEventListener("click",()=>{$("result").classList.add("hidden");$("welcome").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})});
+
 </script>
+
 </body>
+
 </html>
