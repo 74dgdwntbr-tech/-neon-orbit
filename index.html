@@ -1,12 +1,12 @@
 
 
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="uz">
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,77 +16,71 @@
 
 <style>
 
-:root{color-scheme:dark;--bg:#090712;--panel:#151123;--pink:#ff58bd;--purple:#a879ff;--muted:#b8b0c9}
+:root{color-scheme:dark;--bg:#090712;--panel:#151020;--pink:#ff5fc8;--purple:#9b6dff;--text:#f8f5ff;--muted:#b9afca;--line:#392747}
 
 *{box-sizing:border-box}
 
-body{margin:0;background:radial-gradient(ellipse at top,#281442 0,#090712 55%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+body{margin:0;background:radial-gradient(ellipse at top,#29103b 0%,#100a1b 42%,var(--bg) 78%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
 
-header{max-width:850px;margin:auto;padding:25px 20px;display:flex;justify-content:space-between;align-items:center}
+header,main{max-width:850px;margin:auto;padding:20px}
 
-.logo{font-size:25px;font-weight:800;letter-spacing:-1px}.logo b{color:var(--pink)}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
 
-.pill{font-size:12px;color:#e4d6ff;border:1px solid #493265;border-radius:30px;padding:9px 12px}
+.logo{font-size:25px;font-weight:850;letter-spacing:-1px}
 
-main{max-width:850px;margin:auto;padding:12px 20px 60px}
+.logo span{color:var(--pink)}
 
-.hero{text-align:center;padding:28px 8px 34px}
+.pill{font-size:12px;color:#e4d6ff;border:1px solid #553b6a;padding:10px 13px;border-radius:30px;white-space:nowrap}
 
-.orbit{width:105px;height:105px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;font-size:48px;background:radial-gradient(circle,#462263,#171025 65%);border:1px solid #8653a9;box-shadow:0 0 35px #a84aff40;animation:float 3s ease-in-out infinite}
+.hero{text-align:center;padding:28px 8px 32px}
 
-@keyframes float{50%{transform:translateY(-7px)}}
-
-.eyebrow{color:var(--pink);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.eyebrow{color:var(--pink);font-size:12px;letter-spacing:3px;font-weight:800}
 
 h1{font-size:clamp(30px,7vw,48px);line-height:1.12;letter-spacing:-1.5px;margin:15px 0}
 
-.hero p{color:var(--muted);line-height:1.65;max-width:520px;margin:0 auto}
+.hero p,.muted{color:var(--muted);line-height:1.7}
 
-.card{background:linear-gradient(145deg,#1b1429,#100d1b);border:1px solid #39264d;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 14px 40px #0003}
+.orbit{width:110px;height:110px;border:1px solid #68418a;border-radius:50%;margin:24px auto;display:grid;place-items:center;box-shadow:0 0 38px #9b42ff35;position:relative;font-size:46px}
 
-h2{font-size:21px;margin:0 0 12px}
+.orbit:before,.orbit:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 18px var(--pink)}
 
-.muted{color:var(--muted);font-size:14px;line-height:1.6}
+.orbit:before{top:5px;left:17px}.orbit:after{right:2px;bottom:25px;background:var(--purple)}
 
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
+.card{background:linear-gradient(145deg,#1c1429ed,#100d1bf5);border:1px solid var(--line);border-radius:24px;padding:23px;margin:18px 0;box-shadow:0 12px 40px #0002}
 
-.feature{padding:14px 7px;text-align:center;background:#ffffff08;border:1px solid #ffffff12;border-radius:15px;font-size:12px;color:#ddd3ee}
+h2{font-size:23px;margin:8px 0 14px}
 
-.feature span{display:block;font-size:23px;margin-bottom:7px}
+h3{font-size:19px;margin:22px 0 8px}
 
-button{font:inherit;cursor:pointer}
+button{font:inherit;cursor:pointer;border:0;border-radius:15px;padding:15px 18px;font-weight:750;width:100%;color:white;background:linear-gradient(100deg,#a34dff,#ff4ebd);box-shadow:0 7px 24px #c142ff2a}
 
-.primary{width:100%;border:0;border-radius:15px;padding:16px;background:linear-gradient(100deg,#a45cff,#f34fbc);color:#fff;font-weight:800;font-size:16px;box-shadow:0 8px 25px #b14fff35}
+button:disabled{opacity:.4;cursor:not-allowed}
 
-.secondary{border:1px solid #49345d;background:#21182e;color:#fff;border-radius:13px;padding:13px 16px;width:100%;margin-top:10px}
+button.secondary{background:#21172e;border:1px solid #493457;box-shadow:none}
 
-.progressline{height:6px;background:#30253e;border-radius:9px;overflow:hidden;margin:15px 0 22px}
+button.answer{background:#1c1527;border:1px solid #40304f;text-align:left;margin:7px 0;font-weight:550;box-shadow:none;line-height:1.45}
 
-.progress{height:100%;width:25%;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .25s}
+button.answer.selected{border-color:var(--pink);background:#42203f;box-shadow:0 0 0 1px var(--pink) inset}
 
-.question{font-size:21px;line-height:1.4;font-weight:750;margin:18px 0}
+.progress{height:7px;background:#33243e;border-radius:20px;overflow:hidden;margin:15px 0}
 
-.option{display:block;width:100%;text-align:left;color:#eee5f8;background:#ffffff06;border:1px solid #40304f;padding:15px;border-radius:14px;margin:10px 0;line-height:1.45}
+#bar{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .2s}
 
-.option.selected{border-color:var(--pink);background:#ff58bd18;box-shadow:0 0 0 1px #ff58bd30}
-
-.option:focus-visible,button:focus-visible{outline:2px solid white;outline-offset:3px}
+.small{font-size:13px;color:var(--muted)}
 
 .hidden{display:none!important}
 
-.score{font-size:54px;font-weight:850;letter-spacing:-2px;background:linear-gradient(90deg,#ff79cb,#b89aff);background-clip:text;-webkit-background-clip:text;color:transparent;margin:5px 0}
+.score{font-size:64px;font-weight:900;letter-spacing:-3px;color:var(--pink);margin:10px 0}
 
-.resultlabel{display:inline-block;padding:8px 12px;border-radius:20px;background:#a879ff20;color:#d6bdff;font-size:13px}
+.tag{display:inline-block;padding:8px 12px;border-radius:30px;background:#33203f;color:#e8c9ff;font-size:13px}
 
-.locked{border-color:#70457d;background:linear-gradient(145deg,#24142f,#141020)}
+.meter{height:8px;border-radius:20px;background:#30233b;overflow:hidden;margin:9px 0 15px}
 
-.price{font-size:28px;font-weight:850;margin:12px 0}
+.meter span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--pink))}
 
-ul{padding-left:20px;color:#e5dcef;line-height:1.8}
+.price{font-size:29px;font-weight:850;color:var(--pink);margin:10px 0}
 
-footer{text-align:center;color:#81778f;font-size:12px;padding:30px 10px}
-
-@media(max-width:500px){header{padding:20px 16px}main{padding:8px 15px 40px}.card{padding:18px;border-radius:20px}.features{gap:7px}.feature{font-size:11px;padding:12px 4px}.hero{padding-top:20px}}
+footer{text-align:center;color:#897c9c;font-size:12px;padding:25px 15px}
 
 </style>
 
@@ -96,7 +90,7 @@ footer{text-align:center;color:#81778f;font-size:12px;padding:30px 10px}
 
 <header>
 
-  <div class="logo">♡ Mind<b>Test</b></div>
+  <div class="logo">♡ Mind<span>Test</span></div>
 
   <div class="pill">O‘ZBEKCHA · ONLINE</div>
 
@@ -104,257 +98,321 @@ footer{text-align:center;color:#81778f;font-size:12px;padding:30px 10px}
 
 <main>
 
-<section class="hero" id="welcome">
+<section class="hero" id="home">
 
-  <div class="orbit">♡</div>
-
-  <div class="eyebrow">O‘zingizni yaxshiroq anglang</div>
+  <div class="eyebrow">O‘ZINGIZNI YAXSHIROQ ANGLANG</div>
 
   <h1>Bir-biringizni<br>qanchalik tushunasiz?</h1>
 
-  <p>4 ta savolga javob bering va munosabatlaringizdagi muloqot, mehr va ishonch haqida qisqa tahlil oling.</p>
+  <p>20 ta savol. Samimiy javoblar. Munosabatlaringiz haqida yangi fikrlar.</p>
 
-  <div class="features">
+  <div class="orbit">♡</div>
 
-    <div class="feature"><span>💗</span>Mehr va e’tibor</div>
+  <p class="small">Savollar har safar tasodifiy tartibda beriladi.</p>
 
-    <div class="feature"><span>💬</span>Muloqot</div>
-
-    <div class="feature"><span>🤝</span>Ishonch</div>
-
-  </div>
-
-  <button class="primary" id="start">Testni boshlash →</button>
-
-  <p class="muted" style="margin-top:14px;font-size:12px">Bepul mini-test · Taxminan 2 daqiqa</p>
+  <button onclick="startTest()">Testni boshlash →</button>
 
 </section>
 
-<section class="card hidden" id="quiz">
+<section id="quiz" class="card hidden">
 
-  <div class="muted" id="step">1 / 4-savol</div>
+  <div class="eyebrow">MUNOSABAT TESTI</div>
 
-  <div class="progressline"><div class="progress" id="bar"></div></div>
+  <div class="small" id="counter">1 / 20</div>
 
-  <div class="question" id="question"></div>
+  <div class="progress"><div id="bar"></div></div>
 
-  <div id="options"></div>
+  <h2 id="question"></h2>
 
-  <button class="primary" id="next" disabled>Keyingi savol →</button>
+  <div id="answers"></div>
 
-  <button class="secondary" id="back">Orqaga</button>
+  <p class="small" id="hint">Sizga eng yaqin javobni tanlang.</p>
+
+  <button id="next" disabled onclick="nextQuestion()">Keyingi savol →</button>
+
+  <button class="secondary" onclick="goHome()" style="margin-top:10px">Testdan chiqish</button>
 
 </section>
 
-<section class="hidden" id="result">
+<section id="result" class="hidden">
 
   <div class="card">
 
-    <div class="eyebrow">Sizning natijangiz</div>
+    <div class="eyebrow">SIZNING NATIJANGIZ</div>
 
-    <h2 id="resultTitle">Munosabatlar tahlili</h2>
+    <h2 id="resultTitle">Munosabatlaringiz tahlili</h2>
 
-    <div class="score" id="score">75%</div>
+    <div class="score" id="score">0%</div>
 
-    <div class="resultlabel" id="label">Yaxshi boshlanish</div>
+    <span class="tag" id="resultTag">Samimiy tahlil</span>
 
-    <p id="summary" style="line-height:1.7"></p>
+    <p id="summary"></p>
 
-    <h2 style="margin-top:25px">Sizning kuchli tomoningiz</h2>
+    <h3>Sizning kuchli tomoningiz</h3>
 
-    <p id="strength" class="muted"></p>
+    <p id="strength"></p>
 
-    <h2 style="margin-top:22px">Kichik tavsiya</h2>
+    <h3>Kichik tavsiya</h3>
 
-    <p id="tip" class="muted"></p>
+    <p id="advice"></p>
 
   </div>
 
-  <div class="card locked">
+  <div class="card">
 
-    <div class="eyebrow">Premium tahlil</div>
+    <div class="eyebrow">SIZNING PROFILINGIZ</div>
 
-    <h2>💎 To‘liq natijani oching</h2>
+    <h2>Javoblaringiz bo‘yicha</h2>
 
-    <p class="muted">Batafsil hisobotda javoblaringiz asosida quyidagilar bilan tanishing:</p>
+    <div id="meters"></div>
 
-    <ul>
+    <p class="small">Bu natija javoblaringiz asosidagi ko‘ngilochar tahlil bo‘lib, munosabatlaringizga qat’iy baho bermaydi.</p>
 
-      <li>Muloqot va ishonch bo‘yicha batafsil izoh</li>
+  </div>
 
-      <li>Munosabatlarni mustahkamlash uchun tavsiyalar</li>
+  <div class="card">
 
-      <li>Bir-biringizni yaxshiroq tushunish uchun savollar</li>
+    <div class="eyebrow">PREMIUM TAHLIL</div>
 
-    </ul>
+    <h2>♡ To‘liq natijani oching</h2>
+
+    <p class="muted">Batafsil izohlar va qo‘shimcha tavsiyalar uchun demo taklif.</p>
 
     <div class="price">8 000 so‘m</div>
 
-    <button class="primary" id="pay">To‘liq natijani ochish →</button>
+    <button onclick="demoPayment()">To‘liq natija — 8 000 so‘m</button>
 
-    <p class="muted" style="font-size:12px;margin-top:12px">Demo: haqiqiy to‘lov hali ulanmagan.</p>
+    <p class="small">Demo rejim. Haqiqiy to‘lov ulanmagan va pul yechilmaydi.</p>
 
   </div>
 
-  <button class="secondary" id="restart">Testni qayta boshlash</button>
+  <button class="secondary" onclick="startTest()">Yangi testni boshlash ↻</button>
 
 </section>
 
 </main>
 
-<footer>© 2026 MindTest · O‘zaro hurmat va ochiq muloqot muhim.</footer>
+<footer>© 2026 MindTest · O‘zingizni va bir-biringizni yaxshiroq tushuning.</footer>
 
 <script>
 
-const questions=[
+const dimensions = {
 
- {q:"Yaqin insoningiz sizdan xafa bo‘lsa, odatda nima qilasiz?",a:[
+  trust:{name:"Ishonch",tip:"Bir-biringizga ishonchni mustahkamlash uchun va’dalarni bajarish va ochiq gaplashishga e’tibor bering."},
 
-  ["Tinch gaplashib, sababini tushunishga harakat qilaman",3],
+  talk:{name:"Ochiq muloqot",tip:"His-tuyg‘ularingizni ayblamasdan, o‘z nuqtayi nazaringizdan tushuntirishga harakat qiling."},
 
-  ["Biroz vaqt beraman, keyin gaplashaman",2],
+  support:{name:"Qo‘llab-quvvatlash",tip:"Kichik e’tibor, minnatdorchilik va bir-biringizni tinglash munosabatlarni iliq qiladi."},
 
-  ["Muammoni gapirmasdan o‘tib ketishini kutaman",1]]},
+  conflict:{name:"Kelishmovchiliklarni hal qilish",tip:"Jahlingiz chiqqanda tanaffus qiling, keyin muammoni birgalikda hal qilishga qayting."},
 
- {q:"Kelishmovchilik paytida siz uchun nima muhim?",a:[
+  closeness:{name:"Yaqinlik",tip:"Birga vaqt o‘tkazish va bir-biringizga e’tibor berish yaqinlikni oshirishi mumkin."}
 
-  ["Bir-birimizni tinglash va yechim topish",3],
+};
 
-  ["Tinchlanib, keyin suhbatni davom ettirish",2],
+const qs = [
 
-  ["Bahsni imkon qadar tez tugatish",1]]},
+{q:"Yaqin insoningiz sizdan xafa bo‘lsa, nima qilasiz?",d:"talk",a:[["Uni tinglab, sababini tushunishga harakat qilaman",2],["Biroz vaqt berib, keyin gaplashaman",1],["O‘zi o‘tib ketishini kutaman",0]]},
 
- {q:"Yaqin insoningizga mehringizni qanday ko‘rsatasiz?",a:[
+{q:"Kelishmovchilik paytida siz uchun eng muhimi nima?",d:"conflict",a:[["Bir-birimizni tushunib, yechim topish",2],["Avval tinchlanib olish",1],["O‘z fikrimni isbotlash",0]]},
 
-  ["So‘zlarim va amallarim bilan muntazam",3],
+{q:"Yaqin insoningizga mehrni qanday ko‘rsatasiz?",d:"closeness",a:[["So‘zlarim va amallarim bilan",2],["Vaqti-vaqti bilan sovg‘a yoki yordam bilan",1],["Mehrni ko‘rsatish menga qiyin",0]]},
 
-  ["Ko‘proq yordam berish orqali",2],
+{q:"Sog‘lom munosabatda nima muhim?",d:"trust",a:[["Ishonch va hurmat",2],["Bir-biriga ko‘p vaqt ajratish",1],["Doim bir fikrda bo‘lish",0]]},
 
-  ["Ko‘pincha u o‘zi tushunadi deb o‘ylayman",1]]},
+{q:"Sherigingiz siz bilan rozi bo‘lmasa, nima qilasiz?",d:"talk",a:[["Uning fikrini ham tushunishga harakat qilaman",2],["Keyinroq yana gaplashaman",1],["Buni hurmatsizlik deb qabul qilaman",0]]},
 
- {q:"Sog‘lom munosabatda qaysi narsa eng muhim?",a:[
+{q:"Va’da berib, bajara olmasangiz nima qilasiz?",d:"trust",a:[["Oldindan aytib, sababini tushuntiraman",2],["Keyin tushuntirishga harakat qilaman",1],["Bu haqda gapirmaslikka urinaman",0]]},
 
-  ["Ishonch, hurmat va ochiq muloqot",3],
+{q:"Yaqin insoningiz og‘ir kunni boshdan kechirsa…",d:"support",a:[["Tinglayman va qanday yordam kerakligini so‘rayman",2],["Kayfiyatini ko‘tarishga harakat qilaman",1],["Muammosini o‘zi hal qilishini kutaman",0]]},
 
-  ["Bir-birini qo‘llab-quvvatlash",2],
+{q:"Birga vaqt o‘tkazish haqida fikringiz?",d:"closeness",a:[["Sifatli vaqt munosabat uchun muhim",2],["Ba’zan birga bo‘lish yetarli",1],["Har kim faqat o‘zi bilan band bo‘lsa ham bo‘ladi",0]]},
 
-  ["Har doim bir fikrda bo‘lish",1]]}
+{q:"Sizga yoqmagan holatni qanday aytasiz?",d:"talk",a:[["Muloyim va aniq tushuntiraman",2],["Ishora qilishga harakat qilaman",1],["Ichimda saqlayman yoki keskin aytaman",0]]},
+
+{q:"Rashk paydo bo‘lsa, qanday yo‘l tutasiz?",d:"trust",a:[["Hislarimni ochiq muhokama qilaman",2],["Avval o‘zim tushunib olishga harakat qilaman",1],["Darhol ayblayman",0]]},
+
+{q:"Sherigingizning orzulari siz uchun…",d:"support",a:[["Muhim, qo‘llab-quvvatlashga harakat qilaman",2],["Unga bog‘liq, qo‘limdan kelsa yordam beraman",1],["Har kim o‘z maqsadi bilan shug‘ullanishi kerak",0]]},
+
+{q:"Kechirim so‘rash haqida nima deb o‘ylaysiz?",d:"conflict",a:[["Xato qilsam, tan olish muhim",2],["Ba’zan birinchi bo‘lib aytish qiyin",1],["Birinchi bo‘lib kechirim so‘ramayman",0]]},
+
+{q:"Muhim qarorlarni qanday qabul qilgan ma’qul?",d:"talk",a:[["Birga maslahatlashib",2],["Har kim fikrini aytib, keyin",1],["Bir kishi o‘zi hal qilgani yaxshi",0]]},
+
+{q:"Siz uchun shaxsiy chegaralar nimani anglatadi?",d:"trust",a:[["Bir-birining erkinligi va chegarasini hurmat qilish",2],["Ba’zi vaziyatlarda kelishib olish",1],["Munosabatda hamma narsani bilish kerak",0]]},
+
+{q:"Sherigingiz muvaffaqiyatga erishsa…",d:"support",a:[["Samimiy quvonib, tabriklayman",2],["Tabriklayman, lekin ko‘p bildirmayman",1],["O‘zimni u bilan taqqoslayman",0]]},
+
+{q:"Janjaldan keyin nima yordam beradi?",d:"conflict",a:[["Tinch suhbat va muammoni tushunish",2],["Biroz vaqt o‘tishi",1],["Mavzuni boshqa ochmaslik",0]]},
+
+{q:"Mehrni qabul qilish siz uchun qanday?",d:"closeness",a:[["E’tibor va iliq so‘zlar menga yoqadi",2],["Vaziyatga qarab",1],["Hislar haqida gaplashish noqulay",0]]},
+
+{q:"Sherigingiz fikringizni tinglamasa, nima qilasiz?",d:"talk",a:[["Tinch paytda bu menga qanday ta’sir qilishini aytaman",2],["Boshqa vaqtda gaplashaman",1],["Men ham uni tinglamay qo‘yaman",0]]},
+
+{q:"Ishonchni nima ko‘proq mustahkamlaydi?",d:"trust",a:[["Halollik va izchil harakatlar",2],["Ko‘p vaqtni birga o‘tkazish",1],["Bir-birining har bir ishini tekshirish",0]]},
+
+{q:"Munosabatni yaxshilash uchun nimaga tayyorsiz?",d:"support",a:[["O‘zimni tinglashga va o‘zgarishga ham tayyorman",2],["Aniq muammo bo‘lsa harakat qilaman",1],["Faqat boshqa inson o‘zgarishi kerak deb o‘ylayman",0]]}
 
 ];
 
-let index=0,answers=[];
+let order=[],pos=0,chosen=null,answers=[],scores={};
 
-const $=id=>document.getElementById(id);
+function shuffle(arr){
 
-$("start").addEventListener("click",()=>{index=0;answers=[];$("welcome").classList.add("hidden");$("result").classList.add("hidden");$("quiz").classList.remove("hidden");render()});
+  const copy=[...arr];
 
-function render(){
+  for(let i=copy.length-1;i>0;i--){
 
- const item=questions[index];
+    const j=Math.floor(Math.random()*(i+1));
 
- $("step").textContent=(index+1)+" / "+questions.length+"-savol";
+    [copy[i],copy[j]]=[copy[j],copy[i]];
 
- $("bar").style.width=((index+1)/questions.length*100)+"%";
+  }
 
- $("question").textContent=item.q;
+  return copy;
 
- $("options").innerHTML="";
+}
 
- item.a.forEach((option,n)=>{
+function show(id){
 
-  const button=document.createElement("button");
+  ["home","quiz","result"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));
 
-  button.className="option"+(answers[index]===n?" selected":"");
+  window.scrollTo({top:0,behavior:"smooth"});
 
-  button.textContent=option[0];
+}
 
-  button.addEventListener("click",()=>{
+function goHome(){show("home")}
 
-   answers[index]=n;
+function startTest(){
 
-   document.querySelectorAll(".option").forEach(b=>b.classList.remove("selected"));
+  order=shuffle(qs.map((_,i)=>i));
 
-   button.classList.add("selected");$("next").disabled=false;
+  pos=0;chosen=null;answers=[];scores={};
+
+  Object.keys(dimensions).forEach(k=>scores[k]=[]);
+
+  show("quiz");renderQuestion();
+
+}
+
+function renderQuestion(){
+
+  chosen=null;
+
+  const q=qs[order[pos]];
+
+  document.getElementById("counter").textContent=(pos+1)+" / "+order.length;
+
+  document.getElementById("bar").style.width=(pos/order.length*100)+"%";
+
+  document.getElementById("question").textContent=q.q;
+
+  document.getElementById("hint").textContent="Sizga eng yaqin javobni tanlang.";
+
+  document.getElementById("next").disabled=true;
+
+  document.getElementById("next").textContent=pos===order.length-1?"Natijani ko‘rish →":"Keyingi savol →";
+
+  const box=document.getElementById("answers");box.innerHTML="";
+
+  q.a.forEach((a,index)=>{
+
+    const b=document.createElement("button");
+
+    b.className="answer";b.textContent=a[0];
+
+    b.onclick=()=>{
+
+      chosen=index;
+
+      [...box.children].forEach(el=>el.classList.remove("selected"));
+
+      b.classList.add("selected");
+
+      document.getElementById("next").disabled=false;
+
+    };
+
+    box.appendChild(b);
 
   });
 
-  $("options").appendChild(button);
+}
 
- });
+function nextQuestion(){
 
- $("next").disabled=answers[index]===undefined;
+  if(chosen===null)return;
 
- $("next").textContent=index===questions.length-1?"Natijani ko‘rish →":"Keyingi savol →";
+  const q=qs[order[pos]],answer=q.a[chosen];
 
- $("back").style.visibility=index===0?"hidden":"visible";
+  answers.push({q:q.q,a:answer[0],dimension:q.d,score:answer[1]});
+
+  scores[q.d].push(answer[1]);
+
+  pos++;
+
+  if(pos<order.length)renderQuestion();else finishTest();
 
 }
 
-$("next").addEventListener("click",()=>{
+function finishTest(){
 
- if(answers[index]===undefined)return;
+  const values=Object.keys(scores).map(k=>({
 
- if(index<questions.length-1){index++;render()}else showResult();
+    key:k,
 
-});
+    name:dimensions[k].name,
 
-$("back").addEventListener("click",()=>{if(index>0){index--;render()}});
+    value:scores[k].reduce((a,b)=>a+b,0)/scores[k].length/2*100
 
-function showResult(){
+  }));
 
- const total=answers.reduce((sum,answer,i)=>sum+questions[i].a[answer][1],0);
+  const overall=Math.round(values.reduce((a,b)=>a+b.value,0)/values.length);
 
- const percent=Math.round(total/(questions.length*3)*100);
+  const sorted=[...values].sort((a,b)=>b.value-a.value);
 
- $("quiz").classList.add("hidden");$("result").classList.remove("hidden");
+  const low=[...values].sort((a,b)=>a.value-b.value)[0];
 
- $("score").textContent=percent+"%";
+  document.getElementById("score").textContent=overall+"%";
 
- if(percent>=85){
+  document.getElementById("resultTitle").textContent=
 
-  $("resultTitle").textContent="Ochiq muloqotga intilasiz";
+    overall>=80?"Munosabatlarda kuchli salohiyat":overall>=55?"Yaxshi asos, yanada o‘sish mumkin":"Bir-biringizni yaxshiroq anglash imkoniyati";
 
-  $("label").textContent="Kuchli asos";
+  document.getElementById("resultTag").textContent=
 
-  $("summary").textContent="Javoblaringiz o‘zaro hurmat, tinglash va ochiq muloqot siz uchun muhimligini ko‘rsatadi. Bu munosabatlar uchun yaxshi asos bo‘lishi mumkin.";
+    overall>=80?"Kuchli asos":overall>=55?"O‘sish imkoniyati":"Samimiy suhbat vaqti";
 
-  $("strength").textContent="Suhbatlashish va kelishmovchiliklarni tushunishga intilish.";
+  document.getElementById("summary").textContent=
 
-  $("tip").textContent="Bir-biringizni tinglashni davom ettiring va his-tuyg‘ularingizni ochiq ifoda eting.";
+    overall>=80?"Javoblaringiz hurmat, muloqot va qo‘llab-quvvatlashga e’tibor borligini ko‘rsatadi. Shu odatlarni davom ettiring.":
 
- }else if(percent>=60){
+    overall>=55?"Javoblaringizda munosabat uchun foydali odatlar ham, birgalikda yaxshilash mumkin bo‘lgan jihatlar ham bor.":
 
-  $("resultTitle").textContent="Yaxshi rivojlanish imkoniyati";
+    "Javoblaringiz ba’zi mavzularni ochiqroq muhokama qilish foydali bo‘lishi mumkinligini ko‘rsatadi. Har bir munosabat o‘ziga xos.";
 
-  $("label").textContent="Muvozanat sari";
+  document.getElementById("strength").textContent=
 
-  $("summary").textContent="Javoblaringizda ijobiy odatlar ham, rivojlantirish mumkin bo‘lgan jihatlar ham bor. Kichik va muntazam suhbatlar foyda berishi mumkin.";
+    sorted[0].name+" — javoblaringizdagi eng kuchli yo‘nalish. Shu yaxshi odatni kundalik munosabatlarda davom ettiring.";
 
-  $("strength").textContent="Munosabatlar haqida o‘ylashga va yaxshilashga tayyorlik.";
+  document.getElementById("advice").textContent=dimensions[low.key].tip;
 
-  $("tip").textContent="Haftada bir marta bir-biringizdan nimalar quvontirgani va nimani yaxshilash mumkinligini so‘rang.";
+  document.getElementById("meters").innerHTML=values.map(v=>
 
- }else{
+    `<div><div style="display:flex;justify-content:space-between;gap:10px"><span>${v.name}</span><strong>${Math.round(v.value)}%</strong></div><div class="meter"><span style="width:${v.value}%"></span></div></div>`
 
-  $("resultTitle").textContent="Bir-biringizni tinglashdan boshlang";
+  ).join("");
 
-  $("label").textContent="Yangi qadamlar";
+  document.getElementById("bar").style.width="100%";
 
-  $("summary").textContent="Bu qisqa test ayrim odatlarni qayta ko‘rib chiqish uchun imkoniyat beradi. Natija munosabatlaringizni to‘liq belgilamaydi.";
-
-  $("strength").textContent="O‘zaro tushunishni yaxshilash uchun har doim yangi qadam tashlash mumkin.";
-
-  $("tip").textContent="Shoshilmasdan suhbatlashing, savollar bering va bir-biringizning fikrini bo‘lmasdan tinglang.";
-
- }
-
- window.scrollTo({top:0,behavior:"smooth"});
+  show("result");
 
 }
 
-$("pay").addEventListener("click",()=>alert("Demo rejim: haqiqiy to‘lov hali ulanmagan. To‘lov tasdiqlanmaguncha pul yubormang."));
+function demoPayment(){
 
-$("restart").addEventListener("click",()=>{$("result").classList.add("hidden");$("welcome").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})});
+  alert("Bu MindTest demo-versiyasi. Haqiqiy to‘lov ulanmagan. 8 000 so‘m yechilmaydi.");
+
+}
 
 </script>
 
